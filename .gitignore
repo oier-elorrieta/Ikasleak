@@ -2,5 +2,5 @@
 .gradle/
 .settings/
 .bin/
-.gradle/
+gradle/
 
