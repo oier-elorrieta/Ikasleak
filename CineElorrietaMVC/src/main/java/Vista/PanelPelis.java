@@ -6,41 +6,45 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import Controlador.ControladorPanelGeneros;
+import Controlador.ControladorPanelPelis;
 
 @SuppressWarnings("serial")
 public class PanelPelis extends JPanel {
 
 	private JButton btnVolver;
-	private JLabel lblGeneros;
-	private ControladorPanelGeneros controladorPanelGeneros;
+	private JLabel lblPelis;
+	private ControladorPanelPelis controladorPanelPelis;
 	
-	public PanelPelis(ControladorPanelGeneros controladorPanelGeneros)
+	public PanelPelis(ControladorPanelPelis controladorPanelPelis)
 	{
-		this.controladorPanelGeneros = controladorPanelGeneros;
+		this.controladorPanelPelis = controladorPanelPelis;
 		
 		setLayout(null);
 		
-		lblGeneros = new JLabel("Panel Generos");
-		lblGeneros.setBounds(58, 35, 115, 14);
-		add(lblGeneros);
+		lblPelis = new JLabel("Panel Pelis");
+		lblPelis.setBounds(58, 35, 115, 14);
+		add(lblPelis);
 		
 		btnVolver = new JButton("Volver");
 		btnVolver.setBounds(58, 62, 89, 23);
 		add(btnVolver);
 		
+		JButton btnHasiera = new JButton("Hasiera");
+		btnHasiera.setBounds(58, 107, 89, 23);
+		add(btnHasiera);
+		
 		initializeEvents();
 	}
 	
 	private void initializeEvents() {
-		this.btnVolver.addActionListener(listenerBotonVolver(this.controladorPanelGeneros));
+		this.btnVolver.addActionListener(listenerBotonVolver(this.controladorPanelPelis));
 	}
 	
-	private ActionListener listenerBotonVolver(ControladorPanelGeneros controladorPanelGeneros) {
+	private ActionListener listenerBotonVolver(ControladorPanelPelis controladorPanelPelis) {
 		return new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				System.out.println("Ejecutando evento Boton Volver");
-				controladorPanelGeneros.accionadoBottonVolverPanelGeneros();
+				controladorPanelPelis.accionadoBottonVolverPanelPelis();
 			}
 		};
 	}
